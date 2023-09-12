@@ -31,10 +31,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t		d_len;
 	size_t		s_len;
 
-	if (size == 0)
-		return (0);
 	d_len = ft_check_dst(dst, size);
 	s_len = ft_strlen(src);
+	if (size == 0)
+		return (d_len + s_len);
 	if (size > d_len + 1)
 		size -= d_len + 1;
 	else
@@ -45,4 +45,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	ft_memcpy(dst, src, size);
 	dst[size] = '\0';
 	return (d_len + s_len);
+}
+
+#include <stdio.h>
+#include <bsd/string.h>
+int main()
+{
+	char dest[30]; memset(dest, 0, 30);
+	char * src = (char *)"AAAAAAAAA";
+	dest[0] = 'B';
+	printf ("%ld - %s\n", ft_strlcat(dest, src, 0), dest);
 }
