@@ -32,11 +32,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-
-#include <stdio.h>
-#include <bsd/string.h>
-
-int main()
-{
-	printf("%s\n", ft_strnstr("abc", "xyz", 0));
-}
