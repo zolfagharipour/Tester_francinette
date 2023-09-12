@@ -46,13 +46,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[size] = '\0';
 	return (d_len + s_len);
 }
-
-#include <stdio.h>
-#include <bsd/string.h>
-int main()
-{
-	char dest[30]; memset(dest, 0, 30);
-	char * src = (char *)"AAAAAAAAA";
-	dest[0] = 'B';
-	printf ("%ld - %s\n", ft_strlcat(dest, src, 0), dest);
-}
