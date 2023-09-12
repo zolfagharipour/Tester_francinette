@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	f_size = nmemb * size;
 	if (size == 0 || nmemb == 0)
-		return(malloc(1));
+		return(malloc(0));
 	if (f_size > 2147483647)
 		return (NULL);
 	ptr = malloc(f_size);
