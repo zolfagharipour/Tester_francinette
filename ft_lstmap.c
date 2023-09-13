@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*out;
 	t_list	*tmp;
-	cahr	*content;
+	char	*content;
 
 	out = 0;
 	if (!f)
